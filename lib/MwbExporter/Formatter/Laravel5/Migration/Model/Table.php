@@ -136,7 +136,7 @@ class Table extends BaseTable
                         $line = '$table->';
                         $type = $this->getFormatter()->getDatatypeConverter()->getType($column);
 
-                        if ($column->isPrimary()) {
+                        if ($column->isAutoIncrement()) {
                             if($type == 'bigInteger') {
                                 $writer->write('$table->bigIncrements(\'' . $column->getColumnName() . '\');');
                             } else {
